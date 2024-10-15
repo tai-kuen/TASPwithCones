@@ -134,24 +134,6 @@ function BTP = updateBTP(BTP, freeCells)
     end
 end
 
-% function closestBTP = findClosestBTP(TASPcurrentPos, BTP, startPos)
-%     % Find the closest Backtracking Points
-%     distances = sqrt((BTP(:, 1) - TASPcurrentPos(1)).^2 + (BTP(:, 2) - TASPcurrentPos(2)).^2);
-% 
-%     % Find all BTPs with the minimum distance
-%     minDistance = min(distances);
-%     minDistanceIndices = find(distances == minDistance);
-% 
-%     if size(minDistanceIndices,1) == 1
-%         % Only one closest point, return it
-%         closestBTP = BTP(minDistanceIndices, :);
-%     else
-%         % Multiple closest points, choose the one farthest from the start position
-%         startDistances = sqrt((BTP(minDistanceIndices, 1) - startPos(1)).^2 + (BTP(minDistanceIndices, 2) - startPos(2)).^2);
-%         [~, maxIndex] = max(startDistances);
-%         closestBTP = BTP(minDistanceIndices(maxIndex), :);
-%     end
-% end
 function closestBTP = findClosestBTP(TASPcurrentPos, BTP, startPos, unknownMap)
     % Initialize variables to store the minimum path distance and the corresponding BTP
     minPathDistance = inf;
