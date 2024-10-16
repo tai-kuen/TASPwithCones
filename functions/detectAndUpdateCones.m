@@ -1,4 +1,4 @@
-function coneLines = detectAndUpdateCones(coneLocations, detectedConeLocations, robot, coneLines, knownMap)
+function [coneLines, detectedConeLocations] = detectAndUpdateCones(coneLocations, detectedConeLocations, robot, coneLines, knownMap)
     % Function to monitor for new cones and call greedyNearestNeighbor when a new cone is detected
     
     i = 1;
