@@ -5,7 +5,6 @@ function coneLines = greedyNearestNeighbor(detectedConeLocations, coneLines, kno
     visited = false(size(detectedConeLocations, 1), 1);  % Track visited cones
     circularRegionRadius = 2;  % Maximum distance to connect cones
     numPoints = 10;  % Number of points for marking lines as occupied
-    disp("new cone detected")
 
     while any(~visited)  % Continue until all cones are visited
         % Find the first unvisited cone
@@ -14,7 +13,6 @@ function coneLines = greedyNearestNeighbor(detectedConeLocations, coneLines, kno
         currentConeBack = currentConeFront;  % Initialize back cone (same for now)
         visited(idx) = true;  % Mark first cone as visited
         newConeLine = currentConeFront;  % Initialize the new line
-        disp(newConeLine);
         
         % Expand the line from both front and back ends as long as any can expand
         while true
@@ -78,8 +76,6 @@ function coneLines = greedyNearestNeighbor(detectedConeLocations, coneLines, kno
                     nearestConeIdxBack = find(all(detectedConeLocations == nearestConeBack, 2), 1);
                     visited(nearestConeIdxBack) = true;
                     expansionOccurred = true;  % Expansion happened at the back
-                    disp("nearest back")
-                    disp(newConeLine)
                 end
             end
             
